@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "edgepulse",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "edgepulse",
+      // Replace with the id printed by `npx wrangler d1 create edgepulse`.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "RATE_LIMIT_PER_MINUTE": "600",
+    "ALLOWED_ORIGINS": "*"
+  },
+  // Daily rollups + retention purge at 03:17 UTC.
+  "triggers": { "crons": ["17 3 * * *"] }
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "edgepulse": {
+      "url": "https://edgepulse.<your-subdomain>.workers.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer ep_read_REPLACE_ME"
+      }
+    }
+  }
+}
